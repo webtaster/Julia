@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Very simple Mandlebrot/Julia plotting in Python.
 
