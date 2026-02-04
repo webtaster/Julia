@@ -138,10 +138,14 @@ stability_threshold = 2
 zero_threshold = 0.01
 
 # Max iterations of the complex function to determine each point's stability/instability
-maxitr  = 100
+maxitr  = 500
 
 
 ###############################################################################
+
+# For timing
+start_time = time.time()
+
 
 # Set up the graphics window.
 
@@ -178,7 +182,7 @@ y_vals  = [y for y in range(int(-height/2), int(height/2), step)]
 #print("min y", y_vals[0]/zoom + y_offset)
 #print("max y", y_vals[-1]/zoom + y_offset)
 
-print("Type:", f"Type: Julia, c = {c}" if julia else "Mandlebrot")
+print("Type:", f"Julia, c = {c}" if julia else "Mandlebrot")
 print("zoom factor", zoom)
 
 
@@ -230,7 +234,8 @@ for disp_y in y_vals:
    win.update()
 
 
-print("most iterations", most_iterations)
+print(f"most iterations {most_iterations}")
+print(f"plot time {time.time() - start_time:.2f} seconds")
 print("Done\n")
 
 
